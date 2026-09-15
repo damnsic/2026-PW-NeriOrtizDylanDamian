@@ -10,8 +10,7 @@ las cuales realizamos la validacion de los datos ingresados por el usuario, en e
 */
 
 const patrones = {
-
-    nombre : /^[A-Za-zÁÉÍÓÚÑáéíóúñÜü\s{2,60}]$/,
+    nombre : /^[A-Za-zÁÉÍÓÚÑáéíóúñÜü\s]{2,60}$/,
     boleta : /^\d{10}$/,
     fecha : /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
 };
@@ -19,12 +18,34 @@ const patrones = {
 const mensajes = {
     nombre : "Solo letras y espacios, entre 2 y 60 caracteres.",
     boleta : "Debe tener exactamente 10 dígitos.",
-    fecha : "Formato esperado : DD/MM/AAAA (ej 01/01/2023"
-
+    fecha : "Formato esperado: DD/MM/AAAA (ej 01/01/2023)"
 };
 
-function validarCamp(campo, valor){
-    return patrones[campo].test()(valor.trim());
-};
+function validarCampo(campo, valor){
+    return patrones[campo].test(valor.trim());
+}
 
+if (typeof document !== 'undefined') {
+    const formulario = document.getElementById('form-registro');
 
+    formulario.addEventListener('submit', (evento) => { 
+        evento.preventDefault(); 
+        let formularioValido = true; 
+
+        //tenemos que validar campo por campo
+        for(const campo of Object.keys(patrones)){
+            const input = document.getElementById(campo);
+            const spanError = document.getElementById(`error-${campo}`);
+
+            const esValido = validarCampo(campo, input.value);
+
+            input.classList.toggle('invalido', !esValido);
+            spanError.textContent = esValido ? '': mensajes[campo];
+
+            if(!esValido) formularioValido = false;
+        }
+
+        const mensajeExito = document.getElementById('mensaje-exito');
+        mensajeExito.textContent = formularioValido ? 'Registro exitoso!' : '';
+    });
+}
