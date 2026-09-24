@@ -105,9 +105,16 @@ formObjeto.addEventListener('submit', (evento) => {
             resultado = JSON.stringify(Object.keys(taller));
             break;
         case 'values':
-            break;
+            const valores = Object.values(taller);
+
+            resultado = [valores.join("\n"),'',tipo: ${typeof valores}].join("\n");
+        break;
+
         case 'entries':
-            break;
+            const entradas = Object.entries(taller);
+
+            resultado = [entradas.map(([campo, valor]) => ${campo}: ${valor}),'',tipo: ${typeof entradas}].join("\n");
+        break;
         case 'stringify':
             const textoJson = JSON.stringify(taller, null, 2);
             resultado = `${textoJson}\n \n tipo: ${typeof textoJson}`;
