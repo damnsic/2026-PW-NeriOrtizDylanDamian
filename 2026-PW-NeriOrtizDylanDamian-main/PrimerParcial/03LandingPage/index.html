@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart-Parking | Tu lugar seguro</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart-Parking</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#proyecto">Proyecto</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#registro">Registro</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="portada">
+        <img src="./img/estacionamiento.jpg" alt="Estacionamiento">
+        <div class="contenido">
+            <h2>Revolucionando tu forma de estacionar</h2>
+            <p>Optimiza tu tiempo y encuentra el espacio perfecto con nuestra tecnología de monitoreo en tiempo real.</p>
+            <a href="#registro" class="btn">Regístrate Ahora</a>
+        </div>
+    </section>
+
+    <section id="proyecto" class="shofolov">
+        <h2 class="polanco">Sobre el Proyecto Smart-Parking</h2>
+        <ul>
+            <li><h3>Misión</h3></li>
+            <li>Reducir el tiempo de búsqueda de estacionamiento mediante tecnología inteligente y mapeo en tiempo real.</li>
+            <li><h3>Visión</h3></li>
+            <li>Ser el sistema líder de gestión de estacionamientos para diferentes estacionamientos de gran escala</li>
+            <li><h3>Valores</h3></li>
+            <li>Innovación | Eficiencia | Seguridad</li>
+        </ul>
+    </section>
+
+    <section id="servicios" class="seccion-servicios">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Monitoreo de espacios disponibles en tiempo real.</li>
+            <li>Paga tu boleto sin hacer filas, sin efectivo.</li>
+            <li>Historial de uso y tiempos de estancia.</li>
+        </ul>
+    </section>
+
+    <section id="registro" class="seccion-registro">
+        <h2>Registro de Usuarios</h2>
+        <form id="form-registro" onsubmit="return validarformulario(event)">
+            <label>Nombre completo:</label>
+            <input type="text" id="nombre" required><br>
+
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo" required><br>
+
+            <label>Edad:</label>
+            <input type="number" id="edad" min="1" required><br>
+
+            <label>Tipo de vehículo:</label>
+            <select id="seleccion" required>
+                <option value="">-- Selecciona un vehículo --</option>
+                <option value="automovil">Automóvil</option>
+                <option value="motocicleta">Motocicleta</option>
+                <option value="scooter">Scooter Eléctrico</option>
+                <option value="bicicleta">Bicicleta</option>
+            </select><br><br>
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+
+    <section id="contacto" class="shofolov" style="text-align: center;">
+        <h2>Contacto y Ubicación</h2>
+        <div class="flex">
+            <a href="#" style="margin: 10px; color: white;">Facebook</a>
+            <a href="#" style="margin: 10px; color: white;">Twitter</a>
+            <a href="#" style="margin: 10px; color: white;">Instagram</a>
+        </div>
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5855848243675!2d-99.17122172391217!3d19.4302919818485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8cb15467e23%3A0xc3c5d8a90ecde347!2sCECyT%209%20%22Juan%20de%20Dios%20B%C3%A1tiz%22!5e0!3m2!1ses-419!2smx!4v1698285512345!5m2!1ses-419!2smx" width="80%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+        <h3>© 2026 Smart-Parking</h3>
+        <p class="nombres-equipo">
+            Desarrollado por:<br>
+            Arroyo Millán Sofía | Muñoz Gutiérrez Diego | Neri Ortiz Dylan Damián | Vacio Pérez Andrea
+        </p>
+    </footer>
+    
+    <script src="./jss/Validar.js"></script>
+</body>
+</html>
