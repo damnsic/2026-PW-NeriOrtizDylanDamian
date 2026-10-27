@@ -1,0 +1,16 @@
+{
+  "name": "expressproyecto",
+  "version": "1.0.0",
+  "description": "Ejemplo de Proyectos Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Demonassit",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}

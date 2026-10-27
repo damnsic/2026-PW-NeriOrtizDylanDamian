@@ -1,0 +1,238 @@
+body {
+    color: white;
+    background-color: #2B4C7E;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'system-ui', Arial, sans-serif;
+}
+
+/* Header fijo y superpuesto */
+header {
+    background-color: #1F1F20;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    position: sticky; /* Mantiene el header en pantalla al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que pase por encima de las imágenes y mapas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+}
+nav a:hover {
+    color: #567EBB;
+}
+@media (max-width: 430px) {
+    header, nav {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 15px;
+        align-items: center;
+    }
+}
+
+img {
+    width: 80px;
+    margin: 10px;
+}
+section {
+    padding: 60px 20px; /* Más espacio entre secciones */
+}
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* Portada */
+.portada {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #1a2f4c;
+    overflow: hidden;
+    padding: 0;
+}
+.portada img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4; /* Oscurecido para que resalte mejor el texto */
+}
+.contenido {
+    position: relative; 
+    z-index: 1;
+    text-align: right;
+    color: #ffffff;
+    margin-right: 50px;
+    padding: 20px;
+    max-width: 600px;
+}
+.contenido h2 {
+    font-size: 42px; /* Proporción ajustada */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.contenido p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.btn {
+    font-size: 18px; /* Botón de tamaño normal */
+    background: #0078D4;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.btn:hover {
+    background: #005a9e;
+}
+@media (max-width: 768px) {
+    .contenido {
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .contenido h2 {
+        font-size: 32px;
+    }
+}
+
+/* Secciones generales de texto (Proporciones corregidas) */
+.seccion-servicios, .shofolov {
+    text-align: center;
+    font-size: 18px; /* Letra estándar para lectura */
+    line-height: 1.6;
+}
+.shofolov h2, .seccion-servicios h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.polanco {
+    background-color: #567EBB;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.shofolov ul, .seccion-servicios ul {
+    list-style: none; /* Quita los puntos de la lista para un diseño más limpio */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+.shofolov li, .seccion-servicios li {
+    margin-bottom: 10px;
+}
+.shofolov h3, .seccion-servicios h3 {
+    margin-top: 25px;
+    color: #8bb5f5; /* Títulos secundarios resaltados */
+    font-size: 24px;
+}
+.shofolov a {
+    text-decoration: underline;
+    color: white;
+}
+.shofolov a:hover {
+    color: #8bb5f5;
+}
+
+/* Estilos del registro */
+.seccion-registro {
+    background-color: #f4f6f7;
+    color: black;
+}
+.seccion-registro h2 {
+    text-align: center;
+    color: #1f618d;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+.seccion-registro form {
+    background-color: white;
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+.seccion-registro label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+.seccion-registro input[type="text"], 
+.seccion-registro input[type="email"], 
+.seccion-registro input[type="number"], 
+.seccion-registro select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.seccion-registro button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28b463;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.seccion-registro button:hover {
+    background-color: #239b56;
+}
+@media (max-width: 768px) {
+    .seccion-registro form {
+        width: 90%;
+    }
+}
+
+/* Footer */
+footer {
+    background: #1F1F20;
+    text-align: center;
+    padding: 30px 10px;
+    margin-top: 0px;
+}
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.nombres-equipo {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+}
