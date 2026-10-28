@@ -27,32 +27,37 @@ app.post('/eco', (req, res) => {
     res.status(201).json({eco:texto})
 });
 
+//prueba de vida de la API del proyecto (Semana 9 - Postman, paso 0 y 2)
+app.get('/', (req, res) => {
+    res.json({ mensaje: 'API de Registro de Asistencia - CECyT 9 funcionando correctamente' });
+});
+
 //============================================================
 // Usuarios
 //============================================================
-app.get('/usuarios', usuariosController.listarUsuarios);
-app.get('/usuarios/:id', usuariosController.obtenerUsuario);
-app.post('/usuarios', usuariosController.crearUsuario);
-app.put('/usuarios/:id', usuariosController.actualizarUsuario);
-app.delete('/usuarios/:id', usuariosController.eliminarUsuario);
+app.get('/api/usuarios', usuariosController.listarUsuarios);
+app.get('/api/usuarios/:id', usuariosController.obtenerUsuario);
+app.post('/api/usuarios', usuariosController.crearUsuario);
+app.put('/api/usuarios/:id', usuariosController.actualizarUsuario);
+app.delete('/api/usuarios/:id', usuariosController.eliminarUsuario);
 
 //============================================================
 // Talleres
 //============================================================
-app.get('/talleres', talleresController.listarTalleres);
-app.get('/talleres/:id', talleresController.obtenerTaller);
-app.get('/talleres/:id/asistencias', talleresController.listarAsistentesDeTaller);
-app.post('/talleres', talleresController.crearTaller);
-app.put('/talleres/:id', talleresController.actualizarTaller);
-app.delete('/talleres/:id', talleresController.eliminarTaller);
+app.get('/api/talleres', talleresController.listarTalleres);
+app.get('/api/talleres/:id', talleresController.obtenerTaller);
+app.get('/api/talleres/:id/asistencias', talleresController.listarAsistentesDeTaller);
+app.post('/api/talleres', talleresController.crearTaller);
+app.put('/api/talleres/:id', talleresController.actualizarTaller);
+app.delete('/api/talleres/:id', talleresController.eliminarTaller);
 
 //============================================================
 // Asistencias
 //============================================================
-app.get('/asistencias', asistenciasController.listarAsistencias);
-app.get('/asistencias/:id', asistenciasController.obtenerAsistencia);
-app.post('/asistencias', asistenciasController.registrarAsistencia);
-app.delete('/asistencias/:id', asistenciasController.eliminarAsistencia);
+app.get('/api/asistencias', asistenciasController.listarAsistencias);
+app.get('/api/asistencias/:id', asistenciasController.obtenerAsistencia);
+app.post('/api/asistencias', asistenciasController.registrarAsistencia);
+app.delete('/api/asistencias/:id', asistenciasController.eliminarAsistencia);
 
 
 app.listen(PORT, () => {

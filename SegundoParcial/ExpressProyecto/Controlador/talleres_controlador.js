@@ -14,7 +14,9 @@ async function obtenerTaller(req, res) {
     try {
         const taller = await talleresModel.obtenerPorId(req.params.id);
         if (!taller) return res.status(404).json({ error: 'Taller no encontrado' });
-        res.json(taller);
+        //se agrega el conteo de asistentes (Semana 9 - Postman, paso 3.2)
+        const asistentes = await talleresModel.contarCupoOcupado(req.params.id);
+        res.json({ ...taller, asistentes });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
