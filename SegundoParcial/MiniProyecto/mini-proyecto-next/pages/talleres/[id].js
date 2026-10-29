@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { pedirJSON } from '../../lib/api';
 import { formatearFecha, ocultarBoleta } from '../../lib/formato';
-import { validarBoleta } from '../../lib/validaciones';
+import { validarBoleta, errorNombre } from '../../lib/validaciones';
 import estilos from '../../styles/Talleres.module.css';
 
 // /talleres/[id] — detalle de un taller, con inscripción.
@@ -61,7 +61,8 @@ export default function DetalleTaller() {
 
     const nombreLimpio = nombre.trim();
     const boletaLimpia = boleta.trim();
-    if (!nombreLimpio) return setErrorForm('Escribe tu nombre.');
+    const errorDeNombre = errorNombre(nombreLimpio);
+    if (errorDeNombre) return setErrorForm(errorDeNombre);
     if (!validarBoleta(boletaLimpia)) return setErrorForm('La boleta debe tener 10 dígitos.');
     if (lleno) return setErrorForm('El taller ya no tiene lugares.');
     if (asistencias.some((a) => a.boleta === boletaLimpia)) {
