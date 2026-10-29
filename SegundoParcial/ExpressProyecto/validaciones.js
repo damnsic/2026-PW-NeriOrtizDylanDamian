@@ -1,4 +1,4 @@
-//vamos a tener funciones que se encargan de validar correo, boleta y contraseña
+//funciones que se encargan de validar correo, boleta y contraseña
 
 //correo: formato básico usuario@dominio.algo
 function validarCorreo(correo) {

@@ -27,23 +27,21 @@ app.post('/eco', (req, res) => {
     res.status(201).json({eco:texto})
 });
 
-//prueba de vida de la API del proyecto (Semana 9 - Postman, paso 0 y 2)
+//prueba de vida de la API del proyecto
 app.get('/', (req, res) => {
     res.json({ mensaje: 'API de Registro de Asistencia - CECyT 9 funcionando correctamente' });
 });
 
-//============================================================
 // Usuarios
-//============================================================
+
 app.get('/api/usuarios', usuariosController.listarUsuarios);
 app.get('/api/usuarios/:id', usuariosController.obtenerUsuario);
 app.post('/api/usuarios', usuariosController.crearUsuario);
 app.put('/api/usuarios/:id', usuariosController.actualizarUsuario);
 app.delete('/api/usuarios/:id', usuariosController.eliminarUsuario);
 
-//============================================================
 // Talleres
-//============================================================
+
 app.get('/api/talleres', talleresController.listarTalleres);
 app.get('/api/talleres/:id', talleresController.obtenerTaller);
 app.get('/api/talleres/:id/asistencias', talleresController.listarAsistentesDeTaller);
@@ -51,9 +49,8 @@ app.post('/api/talleres', talleresController.crearTaller);
 app.put('/api/talleres/:id', talleresController.actualizarTaller);
 app.delete('/api/talleres/:id', talleresController.eliminarTaller);
 
-//============================================================
 // Asistencias
-//============================================================
+
 app.get('/api/asistencias', asistenciasController.listarAsistencias);
 app.get('/api/asistencias/:id', asistenciasController.obtenerAsistencia);
 app.post('/api/asistencias', asistenciasController.registrarAsistencia);

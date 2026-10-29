@@ -45,7 +45,7 @@ async function crearUsuario(req, res) {
 async function actualizarUsuario(req, res) {
     const { nombre, correo, rol } = req.body;
 
-    //se exige al menos UN campo para actualizar (antes la condición estaba invertida)
+    //se exige al menos UN campo para actualizar 
     if (nombre === undefined && correo === undefined && rol === undefined) {
         return res.status(400).json({ error: 'Debe de ingresar alguno de los siguientes datos para actualizar: nombre, correo o rol' });
     }

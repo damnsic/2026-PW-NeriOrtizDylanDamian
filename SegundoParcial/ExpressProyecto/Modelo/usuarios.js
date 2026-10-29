@@ -49,5 +49,4 @@ async function buscarPorCorreoConHash(correo) {
     return filas[0];
 }
 
-//siempre es necesario exportar las funciones para poder crear su api
 module.exports = { listar, obtenerPorId, crear, actualizar, eliminar, buscarPorCorreoConHash };

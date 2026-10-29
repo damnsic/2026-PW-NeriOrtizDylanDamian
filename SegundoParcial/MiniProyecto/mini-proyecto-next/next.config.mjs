@@ -1,10 +1,8 @@
 
 
 const MINI_SERVIDOR_URL = 'http://localhost:4000';
-// Antes decía 'http://localhost:3306' — ese es el puerto de MySQL (protocolo de base de
-// datos, no HTTP), por lo que cualquier fetch a través de este rewrite fallaba siempre.
-// Lo apunto a tu servidor Express real (server.js, PORT = 4000).
-const BACKEND_URL = 'http://localhost:4000';
+// backend-memoria de la actividad de la semana 9 (talleres/asistencias/usuarios en memoria).
+const BACKEND_URL = 'http://localhost:3001';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

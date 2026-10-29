@@ -1,7 +1,7 @@
 const pool = require('../db-local');
 const { randomUUID } = require('crypto');
 
-//id es CHAR(36) generado por nosotros en JS (igual que haría UUID() en MySQL),
+//id es CHAR(36) generado en JS,
 //así podemos devolver el registro recién creado sin depender de insertId
 const COLUMNAS = 'id, nombre, instructor, fecha, cupo, created_at';
 

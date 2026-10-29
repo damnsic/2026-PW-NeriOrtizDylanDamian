@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-//vamos a crear un mini servidor a base de express con react
 
 export default function MiniServidor(){
     const [saludo, setSaludo] = useState('');
