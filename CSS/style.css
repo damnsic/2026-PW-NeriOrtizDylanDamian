@@ -103,10 +103,18 @@ body {
     padding-top: 1.5rem;
 }
 
-/* Proyectos que todavía no tienen una interfaz web para abrir directamente */
-.tabla .pendiente {
-    display: inline-block;
+/* Nota debajo del botón de un proyecto que necesita su servidor corriendo localmente */
+.tabla .nota-enlace {
+    display: block;
+    margin-top: 0.4rem;
     color: #9ca3af;
     font-style: italic;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+}
+
+.tabla .nota-enlace code {
+    font-style: normal;
+    background-color: #f3f4f6;
+    padding: 0.05rem 0.3rem;
+    border-radius: 0.2rem;
 }
